@@ -1,0 +1,22 @@
+#include<iostream> 
+using namespace std;
+
+int main()
+{
+    int kolvo, i = 1, summa, number;
+    cout << " How much integers?  ";
+   
+    cin >> kolvo;
+    summa = 0;
+    do {
+        if (kolvo > 0)
+        {
+            cout << " Number " << i << ": ";
+            cin >> number;
+            summa += number;
+            i++;
+        }
+    } while (i <= kolvo);
+    cout << "  Sum of " << kolvo << " int is: " << summa;
+    return 0;
+}
