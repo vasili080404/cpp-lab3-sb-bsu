@@ -1,0 +1,42 @@
+#include<iostream> 
+using namespace std;
+
+int main()
+{
+    int kolvo, i = 1, summa, number;
+    cout << " How much integers?  ";
+
+    cin >> kolvo;
+
+
+    while (cin.fail())  
+    {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "(try again) How much integers?  \n";
+        cin >> kolvo;
+
+    }
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    summa = 0;
+    do {
+       
+        if (kolvo > 0)
+        {
+            cout << " Number " << i << ": ";
+            cin >> number;
+            if (cin.fail())//checking if user print wrong number and then asking the correct(integer)
+            {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "you have entered wrong input" << endl;
+                continue;
+            }
+            summa += number;
+            i++;
+        }
+    } while (i <= kolvo);
+    cout << "  Sum of " << kolvo << " int is: " << summa;
+    return 0;
+}
